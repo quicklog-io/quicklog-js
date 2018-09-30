@@ -5,16 +5,30 @@ JavaScript (ES6) client library (SDK) for the Quicklog.io API
 
 ## Installation
 
-  `npm install quicklog`
+  `npm install quicklogjs`
 
 ## Usage
 
-    var numFormatter = require('quicklog');
+Remember to use your own 'projectId' and 'apiKey' below:
+```
+const quicklogjs = require('quicklogjs');
+quicklogjs.config({ projectId: 123456, source: 'my-test-program', apiKey: 'your-api-key' });
+const { quicklog, quicktag, traceOpts, generateId } = quicklogjs;
 
-    var formattedNum = numFormatter(35666);
+const trace = traceOpts('user:me', '', '');
+const tags = ['name1:value1', 'value', 'name1:value:with:colons', ':value:with:colons'];
+const context = {key: 'value'};
 
+quicklog('a-type', 'object:1', 'target:2', context, tags, trace)
+  .then(function(res) {
+          console.log('GOOD: response=' + JSON.stringify(res));
+        },
+        function(err) {
+          console.log('BAD: error=' + err);
+        });
+```
 
-  Output should be `35,666`
+   See the [examples](examples) directory for more.
 
 
 ## Tests

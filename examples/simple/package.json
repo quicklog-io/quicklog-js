@@ -1,0 +1,14 @@
+{
+  "name": "simple",
+  "version": "0.1.0",
+  "description": "simple quicklogjs example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "quicklog.io <support@quicklog.io> (https://quicklog.io)",
+  "license": "ISC",
+  "dependencies": {
+    "quicklogjs": "^0.1.0"
+  }
+}
