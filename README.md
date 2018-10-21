@@ -68,7 +68,7 @@ The `quicktag` function is for associating an application defined value (or key:
 
 The `tag` parameter is a string of the form 'a value' or 'key:value'. If you want to use a value with no key but the value itself contains a colon (`:`) then you can use the form ':value:containing:colons'
 
-The `trace` parameter is a value made using `traceOpts(action, traceId, parentSpanId)`.
+The `trace` parameter is a value made using `traceOpts(actorId, traceId, parentSpanId)`.
 
 Note that associating a tag with a traceId doesn't create a visible log. It's purpose is to allow searching of logged traces by tags. For instance a tag `order:5678` could mean that the logs for a trace with that tag pertain to a customer's order number 5678.
 
