@@ -1,5 +1,5 @@
 const quicklogjs = require('quicklogjs');
-quicklogjs.config({ projectId: 10000, source: 'my-test-program', apiKey: 'your-api-key' });
+quicklogjs.config({ projectId: 12345, apiKey: 'my-api-key', source: 'my-program' });
 const { quicklog, quicktag, traceOpts, generateId } = quicklogjs;
 
 const trace = traceOpts('user:me', '', '');
@@ -8,8 +8,8 @@ const context = {key: 'value'};
 
 quicklog('a-type', 'object:1', 'target:2', context, tags, trace)
   .then(function(res) {
-          console.log('GOOD: response: ' + JSON.stringify(res));
+          console.log('OK: Logged');
         },
         function(err) {
-          console.log('BAD: ' + err);
+          console.log('Error: ' + err);
         });
