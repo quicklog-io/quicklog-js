@@ -5,7 +5,7 @@ JavaScript (ES6) client library (SDK) for the Quicklog.io API
 
 ## Quick Start
 
-  `npm install quicklogjs --save`
+- `npm install quicklogjs --save`
 
 Create the file `index.js` with the following contents.
 Remember to use your own *Project Id* and *API Key* (in place of `12345` and `my-api-key`) below:
@@ -30,9 +30,18 @@ quicklog('a-type', 'object:1', 'target:2', context, tags, trace)
 
 Run the test:
 
-  `node index.js`
+- `node index.js`
 
 It should send a log entry to api.quicklog.io and print `OK: Logged`.
+
+Verify that the entry was logged:
+
+- `curl -si 'https://api.quicklog.io/entries?project_id=12345&api_key=my-api-key'`
+
+Verify that the tag was associated:
+
+- `curl -si 'https://api.quicklog.io/entries?tag=name1:value1&project_id=12345&api_key=my-api-key'`, or
+- `curl -si 'https://api.quicklog.io/entries?tag=value1&project_id=12345&api_key=my-api-key'`
 
 ## Functions
 
