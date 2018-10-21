@@ -78,22 +78,10 @@ The `traceOpts` function is used to make a value that typically doesn't change d
 
 Do not call this multiple times with the same parameters (except in special cases). The returned value contains a randomly generated `spanId`. Normally the same traceOpts value is used throughout the processing a single request/event. One case where you would call it a second time is if the current flow of processing starts another async task to do some related work. When the async task starts, it could call `traceOpts(trace.actorId, trace.traceId, trace.parentSpanId)` and use that returned value throughout. Alternatively the async task could use the value from `traceOpts(trace.actorId, trace.traceId, trace.spanId` which would make its logs appear as a child sequence rather than a sibling of the originating one.
 
-## generateId()
+### generateId()
 
 The `generateId` function is used by `traceOpts` to generate a random hex string for use as a `traceId`/`parentSpanId`/`spanId`.
 
-## Sample
-
-Look in the [examples/simple](../../tree/master/examples/simple) directory for a basic example, similar to what's shown next in 'Usage'.
-
-## Usage
+## Examples
 
    See the [examples](examples) directory for more.
-
-## Tests
-
-  `npm test`
-
-## Contributing
-
-In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
